@@ -11,9 +11,9 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@unhead/vue": "^1.11.15",
+    "@unhead/vue": "^1.11.18",
     "@vueuse/core": "^12.4.0",
-    "qs": "^6.13.1",
+    "qs": "^6.14.0",
     "swiper": "^11.2.1",
     "vue": "^3.5.13",
     "vue-i18n": "^11.0.1",
@@ -24,16 +24,16 @@
     "@intlify/unplugin-vue-i18n": "^6.0.3",
     "@rushstack/eslint-patch": "^1.10.5",
     "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/eslint-config-prettier": "^10.1.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
     "autoprefixer": "^10.4.20",
     "daisyui": "^4.12.23",
     "eslint": "^9.18.0",
     "eslint-plugin-vue": "^9.32.0",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.9",
-    "sass": "^1.83.1",
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "sass": "^1.83.4",
     "tailwindcss": "^3.4.17",
-    "vite": "^6.0.7"
+    "vite": "^6.0.8"
   }
 }
