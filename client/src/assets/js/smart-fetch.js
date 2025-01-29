@@ -1,7 +1,7 @@
-import { useToast } from './toast';
 import * as qs from 'qs';
+import { toast } from './toast';
 
-export async function useSmartFetch({
+export async function smartFetch({
   url = null,
   method = 'GET',
   params = null,
@@ -36,14 +36,14 @@ export async function useSmartFetch({
 
   if (response.ok) {
     if (notifyOnSuccess) {
-      useToast(jsonData.message, {
+      toast(jsonData.message, {
         type: 'success',
       });
     }
   } else {
     // todo: analytics, log, etc...
     if (notifyOnFailure) {
-      useToast(jsonData.message, {
+      toast(jsonData.message, {
         type: 'error',
       });
     }

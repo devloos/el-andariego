@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import vue from '@vitejs/plugin-vue';
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
+import svgLoader from 'vite-svg-loader';
 
 export default defineConfig({
   plugins: [
@@ -18,6 +19,9 @@ export default defineConfig({
     VueI18nPlugin({
       // eslint-disable-next-line no-undef
       include: path.resolve(__dirname, './src/locales/**'),
+    }),
+    svgLoader({
+      defaultImport: 'component',
     }),
   ],
   css: {

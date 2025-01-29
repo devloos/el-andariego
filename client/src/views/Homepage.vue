@@ -3,12 +3,12 @@ import { useHead } from '@unhead/vue';
 import { useI18n } from 'vue-i18n';
 import { ref, watch } from 'vue';
 import StyledDivider from '@/components/StyledDivider.vue';
-import SmartImg from '@/components/smart/SmartImg.vue';
 import LocaleSelector from '@/components/LocaleSelector.vue';
 import Menu from '@/views/Menu.vue';
 import Contact from './Contact.vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
 import { LOCATIONS } from '@/assets/constants/locations';
+import MediaKit from '@/components/MediaKit.vue';
 
 useHead({
   title: 'El Andariego',
@@ -51,27 +51,26 @@ function isLocationOpen() {
     <div
       class="flex h-[250px] w-full items-stretch justify-center overflow-hidden md:mx-auto md:h-[400px] md:max-w-5xl"
     >
-      <SmartImg
-        src="/andariego/misc/demo.mp4"
+      <MediaKit
+        src="/misc/demo.mp4"
         class="w-full object-cover object-center"
-        width=""
-        height=""
+        :width="576"
+        :height="1024"
         loading="eager"
-        type="video"
+        media-type="video"
         alt="hero"
         muted
         autoplay
         loop
-        playsinline
       />
     </div>
 
     <div class="relative">
-      <SmartImg
-        src="/andariego/tr:w-100,h-100/misc/andriego.jpg"
+      <MediaKit
+        src="/misc/andriego.jpg"
         class="logo-position rounded-xl border border-accent shadow-xl"
-        width="100"
-        height="100"
+        :width="100"
+        :height="100"
         loading="eager"
         alt="logo"
       />
@@ -178,7 +177,7 @@ function isLocationOpen() {
           :href="`tel:${location.phoneNumber}`"
           class="flex items-center justify-center gap-2 pb-5"
         >
-          <SmartSvg name="InfoIcon" class="h-5 w-5" />
+          <SmartSvg src="info" class="h-5 w-5" />
           <p>{{ location.phoneNumber }}</p>
         </a>
 

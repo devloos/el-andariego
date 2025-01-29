@@ -1,40 +1,40 @@
 <script setup>
-import SmartImg from '@/components/smart/SmartImg.vue';
+import MediaKit from '@/components/MediaKit.vue';
 
 const images = [
   {
-    url: '/andariego/home/gallery/gallery-1689560307316.jpg',
+    url: '/home/gallery/gallery-1689560307316.jpg',
     width: 800,
     height: 800,
     alt: '',
   },
   {
-    url: '/andariego/home/gallery/gallery-1689472440682.jpg',
+    url: '/home/gallery/gallery-1689472440682.jpg',
     width: 800,
     height: 800,
     alt: '',
   },
   {
-    url: '/andariego/home/gallery/gallery-1689472440680.jpg',
+    url: '/home/gallery/gallery-1689472440680.jpg',
     width: 800,
     height: 800,
     alt: '',
   },
   {
-    url: '/andariego/home/gallery/gallery-1689472440681.jpg',
+    url: '/home/gallery/gallery-1689472440681.jpg',
     width: 800,
     height: 800,
     alt: '',
   },
 
   {
-    url: '/andariego/home/gallery/gallery-1689472440679.jpg',
+    url: '/home/gallery/gallery-1689472440679.jpg',
     width: 800,
     height: 800,
     alt: '',
   },
   {
-    url: '/andariego/home/gallery/gallery-1689920206721.jpg',
+    url: '/home/gallery/gallery-1689920206721.jpg',
     width: 800,
     height: 800,
     alt: '',
@@ -66,7 +66,7 @@ defineProps({
       speed="800"
     >
       <swiper-slide v-for="(image, idx) in images" :key="idx">
-        <SmartImg
+        <MediaKit
           class="rounded"
           :src="image.url"
           :width="image.width"

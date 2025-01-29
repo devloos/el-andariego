@@ -1,8 +1,8 @@
 <script setup>
 import { computed, inject, ref } from 'vue';
 import { prettyContent } from '@/assets/js/utility';
-import { useSmartFetch } from '@/composables/smart-fetch.js';
-import { useToast } from '@/composables/toast.js';
+import { smartFetch } from '@/assets/js/smart-fetch';
+import { toast } from '@/assets/js/toast';
 import { useI18n } from 'vue-i18n';
 import { onMounted } from 'vue';
 import SmartSvg from '@/components/smart/SmartSvg.vue';
@@ -18,7 +18,7 @@ const { locale, t } = useI18n({ useScope: 'global' });
 onMounted(async () => {
   try {
     startOverlay();
-    const response = await useSmartFetch({
+    const response = await smartFetch({
       url: `${import.meta.env.VITE_AWS_ORIGIN}/andariego-get-categories`,
       headers: {
         'Access-Control-Allow-Origin': window.origin,
@@ -29,7 +29,7 @@ onMounted(async () => {
     categories.value = response.data;
     selectedCategory.value = categories.value[0];
   } catch {
-    useToast('Failed to fetch items.', { type: 'error' });
+    toast('Failed to fetch items.', { type: 'error' });
   } finally {
     stopOverlay();
   }
@@ -64,11 +64,11 @@ const searchItems = computed(() => {
   <div v-if="categories.length > 0" class="px-1">
     <div class="px-1 pb-3">
       <label class="input input-bordered flex items-center gap-2">
-        <SmartSvg name="SearchIcon" class="h-5 w-5 opacity-80" />
+        <SmartSvg src="search" class="h-5 w-5 opacity-80" />
         <input v-model="search" type="text" class="grow" :placeholder="t('search')" />
         <SmartSvg
           v-if="search"
-          name="XIcon"
+          src="x"
           class="h-4 w-4 opacity-70 hover:cursor-pointer"
           @click="search = ''"
         />
