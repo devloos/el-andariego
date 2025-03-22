@@ -140,7 +140,7 @@ watch(locationId, () => {
           </div>
 
           <a :href="location.googleProfile" class="underline">{{
-            t('ratings', { numberOfRatings: 19 })
+            t('ratings', { numberOfRatings: 21 })
           }}</a>
         </div>
 
