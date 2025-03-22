@@ -20,30 +20,14 @@ useHead({
   ],
 });
 
-const { t, locale } = useI18n({ useScope: 'global' });
+const { t } = useI18n({ useScope: 'global' });
 
-const locationId = ref('capistrano-villas');
+const locationId = ref('truck-1');
 const location = ref(LOCATIONS[0]);
 
 watch(locationId, () => {
   location.value = LOCATIONS.find((el) => el.id === locationId.value);
 });
-
-function isLocationOpen() {
-  const day = new Date().getDay();
-  const SATURDAY = 6;
-
-  switch (locationId.value) {
-    case 'village-san-juan':
-      return day === SATURDAY;
-
-    case 'capistrano-villas':
-      return day !== SATURDAY;
-
-    default:
-      return false;
-  }
-}
 </script>
 
 <template>
@@ -83,8 +67,9 @@ function isLocationOpen() {
 
         <div class="flex justify-center pb-5">
           <select v-model="locationId" class="select select-bordered w-full max-w-xs">
-            <option value="capistrano-villas">Capistrano Villas</option>
-            <option value="village-san-juan">San Juan Village</option>
+            <option v-for="spot in LOCATIONS" :key="spot.id" :value="spot.id">
+              {{ spot.name }}
+            </option>
           </select>
         </div>
 
@@ -159,20 +144,13 @@ function isLocationOpen() {
           }}</a>
         </div>
 
-        <p class="pb-5 text-center">{{ location.address }}</p>
+        <p v-if="location.address" class="pb-5 text-center">{{ location.address }}</p>
 
-        <!-- Dynamic -->
         <div class="flex justify-center gap-1 pb-5">
-          <template v-if="isLocationOpen()">
-            <span class="text-primary-400">{{ t('open_today') }}</span>
-            <span>{{ location.hours }}</span>
-          </template>
-          <span v-else>
-            {{ location.opening[locale] }}
-          </span>
+          <span class="text-primary-400">{{ t('open_today') }}</span>
+          <span>{{ location.hours }}</span>
         </div>
 
-        <!-- Dynamic -->
         <a
           :href="`tel:${location.phoneNumber}`"
           class="flex items-center justify-center gap-2 pb-5"
