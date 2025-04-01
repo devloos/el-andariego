@@ -1,6 +1,6 @@
 /* global  __VITE_APP_VERSION__ */
 import { createApp } from 'vue';
-import { createHead } from '@unhead/vue';
+import { createHead } from '@unhead/vue/client';
 import { createI18n } from 'vue-i18n';
 import { register } from 'swiper/element/bundle';
 
