@@ -67,7 +67,7 @@ defineProps({
     >
       <swiper-slide v-for="(image, idx) in images" :key="idx">
         <MediaKit
-          class="rounded"
+          class="rounded-sm"
           :src="image.url"
           :width="image.width"
           :height="image.height"

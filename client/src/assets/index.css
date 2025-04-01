@@ -1,8 +1,119 @@
 @import 'reset.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@plugin "daisyui/theme" {
+  name: 'andariego';
+  default: true;
+  prefersdark: false;
+  color-scheme: 'light';
+  --color-base-100: #edf1ee;
+  --color-base-200: #d1ddd5;
+  --color-base-300: #a3baab;
+  --color-base-content: oklch(12% 0.042 264.695);
+  --color-primary: #1a532e;
+  --color-primary-content: oklch(98% 0.003 247.858);
+  --color-secondary: #76070a;
+  --color-secondary-content: oklch(98% 0.003 247.858);
+  --color-accent: #bdbbb0;
+  --color-accent-content: oklch(26% 0.051 172.552);
+  --color-neutral: #f8f8f7;
+  --color-neutral-content: oklch(0% 0 0);
+  --color-info: oklch(58% 0.158 241.966);
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: #1a532e;
+  --color-success-content: oklch(98% 0.018 155.826);
+  --color-warning: oklch(66% 0.179 58.318);
+  --color-warning-content: oklch(98% 0.022 95.277);
+  --color-error: #76070a;
+  --color-error-content: oklch(97% 0.013 17.38);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.28125rem;
+  --size-field: 0.28125rem;
+  --border: 1.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+@plugin "daisyui" {
+  themes: 'andariego';
+  base: false;
+  logs: false;
+}
+
+@theme {
+  --color-primary-50: #edf1ee;
+  --color-primary-100: #d1ddd5;
+  --color-primary-200: #a3baab;
+  --color-primary-300: #769882;
+  --color-primary-400: #487558;
+  --color-primary-600: #154225;
+  --color-primary-700: #10321c;
+  --color-primary-800: #0a2112;
+  --color-primary-900: #051109;
+  --color-primary: #1a532e;
+
+  --color-alternate-100: #e4cdce;
+  --color-alternate-200: #c89c9d;
+  --color-alternate-300: #ad6a6c;
+  --color-alternate-400: #91393b;
+  --color-alternate-600: #5e0608;
+  --color-alternate-700: #470406;
+  --color-alternate-800: #2f0304;
+  --color-alternate-900: #180102;
+  --color-alternate: #76070a;
+
+  --color-accent-100: #f2f1ef;
+  --color-accent-200: #e5e4df;
+  --color-accent-300: #d7d6d0;
+  --color-accent-400: #cac9c0;
+  --color-accent-600: #97968d;
+  --color-accent-700: #71706a;
+  --color-accent-800: #4c4b46;
+  --color-accent-900: #262523;
+  --color-accent: #bdbbb0;
+
+  --color-coal-100: #d6d6d6;
+  --color-coal-200: #adadad;
+  --color-coal-300: #858585;
+  --color-coal-400: #5c5c5c;
+  --color-coal-600: #292929;
+  --color-coal-700: #1f1f1f;
+  --color-coal-800: #141414;
+  --color-coal-900: #0a0a0a;
+  --color-coal: #333333;
+
+  --color-ash-100: #fefefd;
+  --color-ash-200: #fcfcfc;
+  --color-ash-300: #fbfbfa;
+  --color-ash-400: #f9f9f9;
+  --color-ash-600: #c6c6c6;
+  --color-ash-700: #959594;
+  --color-ash-800: #636363;
+  --color-ash-900: #323231;
+  --color-ash: #f8f8f7;
+}
+
+@utility container {
+  margin-inline: auto;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
 
 :root {
   --toastify-icon-color-success: #1a532e;

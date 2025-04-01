@@ -63,12 +63,12 @@ async function submitForm() {
         :height="1080"
       />
       <form ref="form" class="w-full px-2" @submit.prevent="submitForm">
-        <div class="grid grid-cols-2 gap-2">
+        <div class="mb-2 grid grid-cols-2 gap-2">
           <SmartInput v-model="name" :label="t('form.name')" type="text" />
           <SmartInput v-model="email" :label="t('form.email')" type="email" />
         </div>
 
-        <div class="grid grid-cols-2 gap-2">
+        <div class="mb-2 grid grid-cols-2 gap-2">
           <SmartInput v-model="phone" :label="t('form.phone_number')" type="tel" />
 
           <div class="form-control">
@@ -87,7 +87,7 @@ async function submitForm() {
           </div>
         </div>
 
-        <div class="form-control pb-5">
+        <div class="form-control flex flex-col pb-5">
           <label class="label">
             <span class="label-text">
               {{ t('form.message') }}
@@ -95,7 +95,7 @@ async function submitForm() {
           </label>
           <textarea
             v-model="description"
-            class="textarea textarea-bordered"
+            class="textarea textarea-bordered w-full"
             type="text"
             :placeholder="t('form.descriptive_message')"
             required

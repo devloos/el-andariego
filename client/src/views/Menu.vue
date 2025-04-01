@@ -63,7 +63,7 @@ const searchItems = computed(() => {
 <template>
   <div v-if="categories.length > 0" class="px-1">
     <div class="px-1 pb-3">
-      <label class="input input-bordered flex items-center gap-2">
+      <label class="input input-bordered flex w-full items-center gap-2">
         <SmartSvg src="search" class="h-5 w-5 opacity-80" />
         <input v-model="search" type="text" class="grow" :placeholder="t('search')" />
         <SmartSvg
@@ -84,18 +84,18 @@ const searchItems = computed(() => {
           }"
         >
           <div class="flex justify-between">
-            <p class="mb-1 font-semibold uppercase tracking-wide">
+            <p class="mb-1 font-semibold tracking-wide uppercase">
               {{ item.name[locale] }}
             </p>
             <p>${{ item.base_price.toFixed(2) }}</p>
           </div>
-          <p class="flex flex-wrap font-sans font-semibold italic tracking-wide">
+          <p class="flex flex-wrap font-sans font-semibold tracking-wide italic">
             {{ prettyContent(item.content[locale], locale) }}
           </p>
         </div>
         <hr
           v-if="index + 1 < searchItems.length"
-          class="absolute bottom-0 left-0 right-0 border-gray-400"
+          class="absolute right-0 bottom-0 left-0 border-gray-400"
         />
       </div>
 
@@ -112,10 +112,10 @@ const searchItems = computed(() => {
       <div
         v-for="category in categories"
         :key="category._id"
-        class="collapse join-item collapse-arrow border border-base-300"
+        class="join-item collapse-arrow border-base-300 collapse border"
       >
         <input type="radio" name="categories" />
-        <div class="collapse-title text-xl font-medium uppercase tracking-wide">
+        <div class="collapse-title text-xl font-medium tracking-wide uppercase">
           {{ category.name }}
         </div>
         <div class="collapse-content">
@@ -128,18 +128,18 @@ const searchItems = computed(() => {
                 }"
               >
                 <div class="flex justify-between">
-                  <p class="mb-1 font-semibold uppercase tracking-wide">
+                  <p class="mb-1 font-semibold tracking-wide uppercase">
                     {{ item.name[locale] }}
                   </p>
                   <p>${{ item.base_price.toFixed(2) }}</p>
                 </div>
-                <p class="flex flex-wrap font-sans font-semibold italic tracking-wide">
+                <p class="flex flex-wrap font-sans font-semibold tracking-wide italic">
                   {{ prettyContent(item.content[locale], locale) }}
                 </p>
               </div>
               <hr
                 v-if="index + 1 < category.items.length"
-                class="absolute bottom-0 left-0 right-0 border-gray-400"
+                class="absolute right-0 bottom-0 left-0 border-gray-400"
               />
             </div>
           </div>
