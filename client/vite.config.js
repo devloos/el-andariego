@@ -4,6 +4,7 @@ import path from 'path';
 import vue from '@vitejs/plugin-vue';
 import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite';
 import svgLoader from 'vite-svg-loader';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   plugins: [
@@ -23,6 +24,7 @@ export default defineConfig({
     svgLoader({
       defaultImport: 'component',
     }),
+    tailwindcss(),
   ],
   css: {
     preprocessorOptions: {
