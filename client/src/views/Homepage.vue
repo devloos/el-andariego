@@ -52,7 +52,7 @@ watch(locationId, () => {
     <div class="relative">
       <MediaKit
         src="/misc/andriego.jpg"
-        class="logo-position rounded-xl border border-accent shadow-xl"
+        class="logo-position border-accent rounded-xl border shadow-xl"
         :width="100"
         :height="100"
         loading="eager"
@@ -61,7 +61,7 @@ watch(locationId, () => {
 
       <div class="mx-auto max-w-2xl pt-[70px]">
         <div class="pb-5 text-center">
-          <h2 class="pb-1 text-2xl font-bold uppercase tracking-wide">El Andariego</h2>
+          <h2 class="pb-1 text-2xl font-bold tracking-wide uppercase">El Andariego</h2>
           <p>Mexican, Food Truck</p>
         </div>
 
@@ -161,14 +161,19 @@ watch(locationId, () => {
 
         <LocaleSelector class="pb-5 text-sm" />
 
-        <div class="mx-4 rounded-lg bg-primary-100 px-8 py-4 text-center">
+        <div class="bg-primary-100 mx-4 rounded-lg px-8 py-4 text-center">
           <p class="pb-2 font-bold">{{ t('promotional.hook') }}</p>
-          <p class="pb-4">{{ t('promotional.body') }}</p>
-          <a
-            href="https://order.elandariegotruck.com/?cc=first-online-15"
-            class="btn btn-primary btn-sm"
-          >
-            {{ t('home.order_now') }}
+          <p class="text-sm">{{ t('promotional.body') }}</p>
+          <div class="flex flex-wrap items-center justify-center gap-2 pb-4">
+            <SmartSvg src="visa" class="w- h-6" />
+            <SmartSvg src="master-card" class="h-8 w-8" />
+            <SmartSvg src="american-express" class="h-6 w-6" />
+            <SmartSvg src="discover" class="h-6 w-6" />
+            <SmartSvg src="apple-pay" class="h-7 w-7" />
+            <SmartSvg src="google-pay" class="h-7 w-7" />
+          </div>
+          <a href="https://order.elandariegotruck.com" class="btn btn-primary btn-sm">
+            {{ t('promotional.header') }}
           </a>
         </div>
 

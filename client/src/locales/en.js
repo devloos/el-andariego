@@ -14,8 +14,8 @@ export default {
   something_else: 'Try something else?',
   promotional: {
     header: 'Order Online Now!',
-    hook: 'Get 10% OFF*',
-    body: 'For the first 15 people to order online.',
+    hook: 'Skip the wait, order online',
+    body: 'We accept',
   },
   dividers: {
     contact: 'Contact El Andariego',

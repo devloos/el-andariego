@@ -13,9 +13,9 @@ export default {
   couldnt_find: 'No pudimos encontrar lo que estabas buscando.',
   something_else: '¿Intentar algo más?',
   promotional: {
-    header: '¡Ordene en línea ahora!',
-    hook: 'Obtenga 10% de descuento*',
-    body: 'Para las primeras 15 personas que realicen su pedido en línea.',
+    header: '¡Ordene en línea!',
+    hook: 'Omita la espera, ordene en línea',
+    body: 'Aceptamos',
   },
   dividers: {
     contact: 'Contacta El Andariego',
